@@ -20,6 +20,6 @@ export class Satellite {
         } else {
             return false;
         }
-        }
+    }
 }
 
