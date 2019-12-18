@@ -7,6 +7,10 @@
     background-color: #da8a8a;
 }
 
+.odd-numbered-rows {
+    background-color: #a7a6ba;
+}
+
 table {
     color: #111;
     border-radius: 5px;

@@ -7,7 +7,7 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr *ngFor='let satellite of satellites'>
+    <tr [class.odd-numbered-rows]='satellites.indexOf(satellite) % 2 === 0' *ngFor='let satellite of satellites'>
         <td>{{ satellite.name }}</td>
         <td [class.warning]='satellite.shouldShowWarning()'>{{ satellite.type }}</td>
         <td>{{ satellite.operational }}</td>
