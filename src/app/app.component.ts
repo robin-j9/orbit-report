@@ -41,17 +41,32 @@ export class AppComponent {
     }.bind(this));
  
   }
+//   // ORIGINAL SEARCH FUNCTION
+//   search(searchTerm: string): void {
+//     let matchingSatellites: Satellite[] = [];
+//     searchTerm = searchTerm.toLowerCase();
+//     for(let i=0; i < this.sourceList.length; i++) {
+//        let name = this.sourceList[i].name.toLowerCase();
+//        if (name.indexOf(searchTerm) >= 0) {
+//           matchingSatellites.push(this.sourceList[i]);
+//        }
+//     }
+//     // assign this.displayList to be the the array of matching satellites
+//     // this will cause Angular to re-make the table, but now only containing matches
+//     this.displayList = matchingSatellites;
+//    }
   search(searchTerm: string): void {
     let matchingSatellites: Satellite[] = [];
     searchTerm = searchTerm.toLowerCase();
     for(let i=0; i < this.sourceList.length; i++) {
-       let name = this.sourceList[i].name.toLowerCase();
-       if (name.indexOf(searchTerm) >= 0) {
+       let type = this.sourceList[i].type.toLowerCase();
+       let orbitType = this.sourceList[i].orbitType.toLowerCase();
+       if (type.indexOf(searchTerm) >= 0 || orbitType.indexOf(searchTerm) >= 0) {
           matchingSatellites.push(this.sourceList[i]);
        }
     }
     // assign this.displayList to be the the array of matching satellites
     // this will cause Angular to re-make the table, but now only containing matches
     this.displayList = matchingSatellites;
- }
+   }
 }
